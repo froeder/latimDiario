@@ -24,10 +24,11 @@ import { useColorScheme } from '@/hooks/use-color-scheme';
 const CATEGORIES: { key: LatinCategory | 'all'; label: string; icon: string }[] = [
   { key: 'all', label: 'Todas', icon: 'sparkles' },
   { key: 'filosofia', label: 'Filosofia', icon: 'brain.head.profile' },
+  { key: 'sabedoria', label: 'Sabedoria', icon: 'lightbulb.fill' },
+  { key: 'historia', label: 'História', icon: 'clock.fill' },
   { key: 'juridico', label: 'Jurídico', icon: 'book.fill' },
   { key: 'liturgico', label: 'Liturgia', icon: 'heart.fill' },
   { key: 'imperio', label: 'Império', icon: 'star.fill' },
-  { key: 'sabedoria', label: 'Sabedoria', icon: 'lightbulb.fill' },
 ];
 
 export default function ExploreScreen() {

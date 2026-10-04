@@ -3,7 +3,8 @@ export type LatinCategory =
   | 'juridico'
   | 'liturgico'
   | 'imperio'
-  | 'sabedoria';
+  | 'sabedoria'
+  | 'historia';
 
 export interface LatinQuote {
   id: string;
