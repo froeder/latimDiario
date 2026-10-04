@@ -1,50 +1,79 @@
-# Welcome to your Expo app 👋
+# Latim Diário 🏛️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+*Sapientia Antiqua in Vita Hodierna* — Sabedoria clássica, provérbios, brocardos e estudo diário da língua latina em uma experiência moderna e sofisticada.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Funcionalidades Principais
 
+### 1. 🏛️ Diário (Hoje)
+- **Data no Calendário Romano**: exibição clássica (*ex: Dies Solis, IV Octobris MMXXVI*) e calendário contemporâneo.
+- **Contador de Streak (Dias Seguidos)**: incentivo diário para manter o hábito de estudos.
+- **Sententia Diei (Citação do Dia)**:
+  - Máxima em latim com macrons e tradução em português.
+  - Guia fonético interativo (**Pronúncia Clássica / Restituta** vs. **Eclesiástica**).
+  - Contexto histórico e reflexão prática contemporânea.
+  - Botões para favoritar (❤️), compartilhar e sortear novas frases (*Alea Iacta Est*).
+- **Verbum Diei (Palavra do Dia)**:
+  - Termo em latim, classe gramatical e raiz etimológica.
+  - Palavras cognatas/derivadas no português atual.
+  - Exemplo prático de frase em latim.
+- **Desafio Rápido (Aenigma)**:
+  - Pergunta diária de múltipla escolha com feedback e explicação instantânea.
+
+### 2. 📚 Bibliotheca & Explorar
+- **Busca em Tempo Real**: pesquise frases e termos em latim ou português, por autor (*Sêneca, Cícero, Horácio, etc.*) ou por tags.
+- **Filtros por Categoria**:
+  - *Filosofia & Estoicismo*
+  - *Direito & Brocardos Jurídicos*
+  - *Liturgia & Orações Clássicas*
+  - *Império & História de Roma*
+  - *Sabedoria de Vida*
+- **Ferramentas Educativas**:
+  - **Guia Fonético Completo**: regras e diferenças entre Pronúncia Restituta e Eclesiástica com exemplos.
+  - **Tabela Interativa das Declinações**: aprenda os casos (*Nominativo, Vocativo, Acusativo, Genitivo, Dativo, Ablativo*) com funções sintáticas em português e formas singulares/plurais.
+
+### 3. 🧠 Exercitia & Prática
+- **Modo Flashcards**:
+  - Cartões interativos com virada (frente em latim, verso com tradução e notas gramaticais).
+  - Controle de cartões dominados vs. em aprendizado com persistência local.
+- **Quiz Completo**:
+  - Rodada de questões de história, gramática, etimologia e filosofia com placar final e análise de desempenho.
+- **Painel de Progresso**:
+  - Métricas de streak, quantidade de flashcards dominados, frases favoritas e acurácia geral nos quizzes.
+
+### 4. ⭐ Memoria & Diarium (Favoritos & Diário Pessoal)
+- **Citações Salvas**: acesso rápido a todas as frases que você marcou com coração.
+- **Diarium (Diário de Estudos)**:
+  - Registre suas próprias reflexões pessoais e anotações sobre os ensinamentos latinos.
+  - Vincule notas a frases clássicas ou crie anotações livres.
+
+### 5. ⚙️ Ajustes & Personalização
+- **Preferência de Pronúncia**: escolha entre padrão Clássico ou Eclesiástico.
+- **Modo Claro & Escuro (Dark/Light)**: estética neoclássica refinada inspirada em mármore travertino, ouro imperial (*Aureus*) e carmesim pompeiano.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1. **Instalar Dependências**:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. **Iniciar o Aplicativo**:
    ```bash
-   npx expo start
+   # Iniciar no navegador Web
+   npx expo start --web
+
+   # Iniciar no emulador Android
+   npx expo start --android
+
+   # Iniciar no simulador iOS
+   npx expo start --ios
    ```
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. **Verificação de Tipos**:
+   ```bash
+   npx tsc --noEmit
+   ```

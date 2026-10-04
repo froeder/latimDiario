@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "latimDiario",
-    "slug": "latimDiario",
-    "version": "1.0.0",
+    "name": "Latim Diário",
+    "slug": "latimdiario",
+    "version": "2.0.0",
+    "description": "Sabedoria clássica, provérbios, brocardos e estudo diário da língua latina.",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "latimdiario",

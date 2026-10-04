@@ -13,12 +13,36 @@ type IconSymbolName = keyof typeof MAPPING;
  * - see Material Icons in the [Icons Directory](https://icons.expo.fyi).
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
-const MAPPING = {
+const MAPPING: Record<string, ComponentProps<typeof MaterialIcons>['name']> = {
   'house.fill': 'home',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
-} as IconMapping;
+  'chevron.down': 'keyboard-arrow-down',
+  'chevron.up': 'keyboard-arrow-up',
+  'book.fill': 'menu-book',
+  'books.vertical.fill': 'library-books',
+  'magnifyingglass': 'search',
+  'sparkles': 'auto-awesome',
+  'brain.head.profile': 'psychology',
+  'bookmark.fill': 'bookmark',
+  'bookmark': 'bookmark-border',
+  'heart.fill': 'favorite',
+  'heart': 'favorite-border',
+  'quote.opening': 'format-quote',
+  'volume.3.fill': 'volume-up',
+  'arrow.triangle.2.circlepath': 'refresh',
+  'square.and.pencil': 'edit',
+  'checkmark.circle.fill': 'check-circle',
+  'xmark.circle.fill': 'cancel',
+  'info.circle.fill': 'info',
+  'gearshape.fill': 'settings',
+  'flame.fill': 'local-fire-department',
+  'star.fill': 'star',
+  'character.book.closed.fill': 'import-contacts',
+  'lightbulb.fill': 'lightbulb',
+  'graduationcap.fill': 'school',
+};
 
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
