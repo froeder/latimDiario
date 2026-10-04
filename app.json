@@ -8,16 +8,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "latimdiario",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/images/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#F8F6F0",
-      "dark": {
-        "image": "./assets/images/splash-icon.png",
-        "backgroundColor": "#0E1014"
-      }
-    },
     "ios": {
       "supportsTablet": true
     },
@@ -28,8 +18,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.froeder.latimDiario"
     },
     "web": {
       "output": "static",
@@ -54,6 +44,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "3071c9c4-e71f-4992-9f12-87fc7866c43a"
+      }
     }
   }
 }
