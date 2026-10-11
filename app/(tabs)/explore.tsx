@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   StyleSheet,
   View,
@@ -9,6 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
+import { useFocusEffect } from 'expo-router';
 
 import { LATIN_QUOTES } from '@/constants/latin-data';
 import { LatinCategory, LatinQuote, UserProgress } from '@/types/latin';
@@ -41,18 +42,25 @@ export default function ExploreScreen() {
   const [activeModalQuote, setActiveModalQuote] = useState<LatinQuote | null>(null);
   const [journalModalVisible, setJournalModalVisible] = useState(false);
 
-  useEffect(() => {
-    loadProgress();
-  }, []);
-
-  const loadProgress = async () => {
+  const loadProgress = useCallback(async () => {
     const data = await StorageService.getProgress();
     setProgress(data);
-  };
+  }, []);
+
+  // Refresh on focus (tabs stay mounted)
+  useFocusEffect(
+    useCallback(() => {
+      loadProgress();
+    }, [loadProgress])
+  );
 
   const handleToggleFavorite = async (id: string) => {
-    await StorageService.toggleFavorite(id);
-    await loadProgress();
+    const nowFavorite = await StorageService.toggleFavorite(id);
+    setProgress((prev) => {
+      if (!prev) return prev;
+      const others = prev.favoriteQuoteIds.filter((f) => f !== id);
+      return { ...prev, favoriteQuoteIds: nowFavorite ? [...others, id] : others };
+    });
   };
 
   const handleOpenReflection = (quote: LatinQuote) => {

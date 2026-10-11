@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
+import { useFocusEffect } from 'expo-router';
 
 import { LATIN_QUOTES } from '@/constants/latin-data';
 import { LatinQuote, UserProgress } from '@/types/latin';
@@ -38,6 +39,13 @@ export default function SavedScreen() {
   useEffect(() => {
     loadData();
   }, [loadData]);
+
+  // Refresh when returning to this tab (tabs stay mounted)
+  useFocusEffect(
+    useCallback(() => {
+      loadData();
+    }, [loadData])
+  );
 
   const handleToggleFavorite = async (id: string) => {
     await StorageService.toggleFavorite(id);

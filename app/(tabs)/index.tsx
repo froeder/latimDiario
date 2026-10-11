@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 
 import { LATIN_QUOTES, LATIN_WORDS } from '@/constants/latin-data';
@@ -56,6 +56,13 @@ export default function HomeScreen() {
     loadData();
   }, [loadData]);
 
+  // Refresh favorites when returning to this tab (tabs stay mounted)
+  useFocusEffect(
+    useCallback(() => {
+      StorageService.getProgress().then(setProgress);
+    }, [])
+  );
+
   const onRefresh = async () => {
     setRefreshing(true);
     await loadData();
@@ -63,9 +70,15 @@ export default function HomeScreen() {
   };
 
   const handleToggleFavorite = async (quoteId: string) => {
-    await StorageService.toggleFavorite(quoteId);
-    const currentProgress = await StorageService.getProgress();
-    setProgress(currentProgress);
+    const nowFavorite = await StorageService.toggleFavorite(quoteId);
+    setProgress((prev) => {
+      if (!prev) return prev;
+      const others = prev.favoriteQuoteIds.filter((id) => id !== quoteId);
+      return {
+        ...prev,
+        favoriteQuoteIds: nowFavorite ? [...others, quoteId] : others,
+      };
+    });
   };
 
   const handleShuffleQuote = () => {
