@@ -19,7 +19,10 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.froeder.latimDiario"
+      "package": "com.froeder.latimDiario",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "web": {
       "output": "static",
@@ -50,6 +53,9 @@
       "eas": {
         "projectId": "3071c9c4-e71f-4992-9f12-87fc7866c43a"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/3071c9c4-e71f-4992-9f12-87fc7866c43a"
     }
   }
 }
